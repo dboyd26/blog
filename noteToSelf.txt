@@ -1,0 +1,45 @@
+('view engine' , 'ejs') writes code in ejs and converts to html
+
+res.render() accesses views folder
+
+
+
+
+
+
+
+-------------
+-------------
+routers
+-------------
+-------------
+set up a router folder. It will make sure that all your data in yours server.js file is neat.
+to call the router folder you have to place module.exports = router at the bottom of the router file.
+
+in the ejs file: if you use <%= '' %> whatever is inside will be output to page.
+if you use <%  %> it won't be output to page.
+if you use <%-  %> this is for raw html
+
+router.get('/:id' , async (req, res) => {
+    const article = await Article.findById(req.params.id) --find article by id
+    if (article = null)  res.redirect('/)
+    res.render('articles/show', {article: article}) 
+})
+
+
+
+
+slugify is a program that turns id's into words
+method-override allows you to use the delete and put method
+
+
+
+
+
+
+--------------
+--------------
+bootstrap
+--------------
+--------------
+the <div class = container> is a class in bootstrap that allows for padding around applications
